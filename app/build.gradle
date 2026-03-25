@@ -7,9 +7,9 @@ plugins {
 
 group = 'hexlet.code'
 version = '1.0-SNAPSHOT'
-application {
-    mainClass = 'hexlet.code.App'
-}
+
+
+
 repositories {
     mavenCentral()
 }
@@ -19,7 +19,12 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-
+application {
+    mainClass = 'hexlet.code.App'
+    run {
+        standardInput = System.in
+    }
+}
 test {
     useJUnitPlatform()
 }
