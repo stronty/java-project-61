@@ -1,8 +1,12 @@
 plugins {
     id 'java'
     id 'application'
+            <<<<<<< HEAD
     id "com.github.ben-manes.versions" version "0.53.0"  // Add version plugin here instead of buildscript
     id("org.sonarqube") version "7.2.3.7755"
+            =======
+            id "com.github.ben-manes.versions" version "0.53.0"
+                    >>>>>>> fde524d (connecting sonar)
 }
 
 group = 'hexlet.code'
@@ -19,12 +23,14 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
+
 application {
     mainClass = 'hexlet.code.App'
     run {
         standardInput = System.in
     }
 }
+
 test {
     useJUnitPlatform()
 }
