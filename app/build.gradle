@@ -19,12 +19,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-sonar {
-  properties {
-    property("sonar.projectKey", "stronty_java-project-61")
-    property("sonar.organization", "stronty")
-  }
-}
+
 test {
     useJUnitPlatform()
 }
