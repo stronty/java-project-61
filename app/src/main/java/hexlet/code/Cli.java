@@ -9,7 +9,7 @@ public class Cli {
         System.out.println("Welcome to the Brain Games");
         System.out.print("May I have your name? ");
         String username = scanner.nextLine();
-        System.out.println("Hello, " + username + "!");
+        System.out.println("\nHello, " + username + "!");
 
         scanner.close();
     }
