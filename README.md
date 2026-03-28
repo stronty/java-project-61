@@ -13,5 +13,5 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=stronty_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=stronty_java-project-61)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=stronty_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=stronty_java-project-61)
 
-
+[![asciicast](https://asciinema.org/a/T6iRysx3Pzw3hMge.svg)](https://asciinema.org/a/T6iRysx3Pzw3hMge)
 
