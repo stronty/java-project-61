@@ -30,6 +30,6 @@ public class Even {
                 }
             }
             scanner.close();
-            System.out.println("Congratulations, " + Cli.getUsername() + "!");
+            System.out.println("\nCongratulations, " + Cli.getUsername() + "!");
     }
 }
