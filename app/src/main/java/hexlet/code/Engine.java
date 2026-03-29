@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Cli;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
+import hexlet.code.games.*;
 
 public class Engine {
     public static void gamesList(){
@@ -13,6 +10,7 @@ public class Engine {
                 "2 - Even",
                 "3 - Calc",
                 "4 - GCD",
+                "5 - Sequence game",
                 "0 - Exit"
         };
 
@@ -34,8 +32,10 @@ public class Engine {
            case 4:
                GCD.gcd();
                break;
+           case 5:
+               Sequence.seqGame();
            case 0: default:
-               return;
+               break;
        }
 
     }

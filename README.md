@@ -13,7 +13,9 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=stronty_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=stronty_java-project-61)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=stronty_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=stronty_java-project-61)
 
-### Is this number even or not? Game preview
+### Is this number even or not?
 [![asciicast](https://asciinema.org/a/T6iRysx3Pzw3hMge.svg)](https://asciinema.org/a/T6iRysx3Pzw3hMge)
-### What's the highest common divisor? Game preview
+### What's the highest common divisor?
 [![asciicast](https://asciinema.org/a/qepvqK0YnbaMJuK3.svg)](https://asciinema.org/a/qepvqK0YnbaMJuK3)
+### Find the element of a sequence 
+[![asciicast](https://asciinema.org/a/VkWrM5NBPS8RPJEi.svg)](https://asciinema.org/a/VkWrM5NBPS8RPJEi)
