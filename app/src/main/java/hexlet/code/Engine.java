@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Cli;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 public class Engine {
     public static void gamesList(){
@@ -11,6 +12,7 @@ public class Engine {
                 "1 - Greet",
                 "2 - Even",
                 "3 - Calc",
+                "4 - GCD",
                 "0 - Exit"
         };
 
@@ -28,6 +30,9 @@ public class Engine {
                break;
            case 3:
                Calc.calc();
+               break;
+           case 4:
+               GCD.gcd();
                break;
            case 0: default:
                return;
