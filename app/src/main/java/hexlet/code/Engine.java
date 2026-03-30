@@ -34,6 +34,8 @@ public class Engine {
                break;
            case 5:
                Sequence.seqGame();
+           case 6:
+               PrimeNumbers.game();
            case 0: default:
                break;
        }
