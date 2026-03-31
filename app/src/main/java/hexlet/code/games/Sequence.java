@@ -1,27 +1,32 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.Scanner;
+
+import static hexlet.code.games.GameConstants.STANDARD_RANGE;
+import static hexlet.code.games.GameConstants.SEQ_STEP_RANGE;
+import static hexlet.code.games.GameConstants.SEQ_MAX_LENGTH;
+import static hexlet.code.games.GameConstants.SEQ_MIN_LENGTH;
+import static hexlet.code.games.GameConstants.TOTAL_ROUNDS;
+
 
 public class Sequence {
 
-    public static int seqGenerate(){
-        int start = (int)(Math.random() * 25);
-        int step = ((int)(Math.random() * 10 + 1));
 
-        int min = 5;
-        int max = 10;
-        int length = (int)(Math.random() * (max - min + 1) + min);
+    public static int seqGenerate() {
+        int start = (int) (Math.random() * STANDARD_RANGE);
+        int step = ((int) (Math.random() * SEQ_STEP_RANGE + 1));
+
+        int length = (int) (Math.random() * (SEQ_MAX_LENGTH - SEQ_MIN_LENGTH + 1) + SEQ_MIN_LENGTH);
         var seq = new int[length];
 
         int answerIndex = (int) (Math.random() * length);
 
-        for(var i = 0; i < length; i++){
+        for (var i = 0; i < length; i++) {
             seq[i] = start + i * step;
-            if(i != answerIndex){
+            if (i != answerIndex) {
                 System.out.print(seq[i] + " ");
-            }else{
+            } else {
                 System.out.print(".. ");
             }
         }
@@ -30,7 +35,7 @@ public class Sequence {
 
     }
 
-    public static void game(){
+    public static void game() {
         Cli.cli();
         System.out.println("What number is missing in the progression?\n");
 
@@ -38,8 +43,8 @@ public class Sequence {
 
         Scanner scanner = new Scanner(System.in);
 
-        for(var i = 0; i < 3; i++){
-            System.out.println("Question: ");
+        for (var i = 0; i < TOTAL_ROUNDS; i++) {
+            System.out.print("Question: ");
             int answer = seqGenerate();
             System.out.print("\nYour answer: ");
             int guess = scanner.nextInt();

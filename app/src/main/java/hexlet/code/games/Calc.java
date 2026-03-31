@@ -1,40 +1,42 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.Scanner;
+
+import static hexlet.code.games.GameConstants.STANDARD_RANGE;
+import static hexlet.code.games.GameConstants.TOTAL_OPERATORS;
+import static hexlet.code.games.GameConstants.TOTAL_ROUNDS;
 
 public class Calc {
 
 
-    public static void game(){
+    public static void game() {
         Cli.cli();
         System.out.println("What is the result of the expression?");
 
 
         Scanner scanner = new Scanner(System.in);
 
-        for(var i = 0; i < 3; i++){
-            int randNum1 = (int)(Math.random() * 100);
-            int randNum2 = (int)(Math.random() * 100);
-            int max = 2;
-            int operatorIndex = (int) (Math.random() * (max + 1));
+        for (var i = 0; i < TOTAL_ROUNDS; i++) {
+            int randNum1 = (int) (Math.random() * STANDARD_RANGE);
+            int randNum2 = (int) (Math.random() * STANDARD_RANGE);
+            int operatorIndex = (int) (Math.random() * TOTAL_OPERATORS);
             String operator;
 
             int answer;
 
-            switch (operatorIndex){
+            switch (operatorIndex) {
                 case 0:
                     answer = randNum1 + randNum2;
-                    operator = "+";
+                    operator = " + ";
                     break;
                 case 1:
                     answer = randNum1 - randNum2;
-                    operator = "-";
+                    operator = " - ";
                     break;
                 case 2: default:
                     answer = randNum1 * randNum2;
-                    operator = "*";
+                    operator = " * ";
                     break;
             }
 
