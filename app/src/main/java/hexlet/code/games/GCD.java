@@ -2,11 +2,9 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class GCD {
-    private static String guess;
     public static int[] calculateGCD(){
         int randNum1 = (int)(Math.random() * 100);
         int randNum2 = (int)(Math.random() * 100);
@@ -20,8 +18,7 @@ public class GCD {
             b = a % b;
             a = temp;
         }
-        int[] result = {randNum1,randNum2, a};
-        return result;
+        return new int[]{randNum1,randNum2, a};
     }
 
     public static void game(){
@@ -38,8 +35,13 @@ public class GCD {
 
             System.out.println("Question: " + num1 + " " + num2);
             System.out.print("Your answer: ");
-            guess = scanner.nextLine();
-            if (!Engine.keepPlaying(guess, Integer.toString(answer))){
+            int guess = scanner.nextInt();
+            scanner.nextLine();
+
+            if (guess == answer) {
+                System.out.println("Correct!");
+            } else {
+                Engine.loseGame(Integer.toString(guess), Integer.toString(answer));
                 return;
             }
         }

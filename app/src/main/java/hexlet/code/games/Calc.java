@@ -5,7 +5,6 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Calc {
-    private static String guess;
 
 
     public static void game(){
@@ -23,21 +22,30 @@ public class Calc {
             String operator;
 
             int answer;
-            if( operatorIndex == 0){
-                answer = randNum1 + randNum2;
-                operator = "+";
-            }else if( operatorIndex == 1){
-                answer = randNum1 - randNum2;
-                operator = "-";
-            }else{
-                answer = randNum1 * randNum2;
-                operator = "*";
+
+            switch (operatorIndex){
+                case 0:
+                    answer = randNum1 + randNum2;
+                    operator = "+";
+                    break;
+                case 1:
+                    answer = randNum1 - randNum2;
+                    operator = "-";
+                    break;
+                case 2: default:
+                    answer = randNum1 * randNum2;
+                    operator = "*";
+                    break;
             }
 
             System.out.println("Question: " + randNum1 + operator + randNum2);
             System.out.print("Your answer: ");
-            guess = scanner.nextLine();
-            if (!Engine.keepPlaying(guess, Integer.toString(answer))){
+            int guess = scanner.nextInt();
+            scanner.nextLine();
+            if (guess == answer) {
+                System.out.println("Correct!");
+            } else {
+                Engine.loseGame(Integer.toString(guess), Integer.toString(answer));
                 return;
             }
         }

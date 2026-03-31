@@ -6,8 +6,6 @@ import java.util.Scanner;
 
 public class PrimeNumbers {
 
-    private static String guess;
-
     public static boolean isPrime(int number){
         int numRoot = (int) Math.sqrt(number);
 
@@ -35,9 +33,8 @@ public class PrimeNumbers {
     }
     public static void game(){
         Cli.cli();
-        // Rule for the game
         System.out.println("Answer 'yes' if the number is prime, otherwise answer 'no'.");
-        //Core mechanic
+
 
 
         Scanner scanner = new Scanner(System.in);
@@ -47,8 +44,12 @@ public class PrimeNumbers {
             String answer = isPrime(randomNum) ? "yes" : "no";
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
-            guess = scanner.nextLine();
-            if (!Engine.keepPlaying(guess, answer)){
+            String guess = scanner.nextLine();
+
+            if (guess.equals(answer)) {
+                System.out.println("Correct!");
+            } else {
+                Engine.loseGame(guess, answer);
                 return;
             }
         }

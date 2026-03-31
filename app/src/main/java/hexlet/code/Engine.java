@@ -10,7 +10,8 @@ public class Engine {
                 "2 - Even",
                 "3 - Calc",
                 "4 - GCD",
-                "5 - Sequence game",
+                "5 - Progression",
+                "6 - Prime",
                 "0 - Exit"
         };
 
@@ -43,17 +44,7 @@ public class Engine {
        }
 
     }
-    public static boolean keepPlaying(String guess, String answer){
 
-        if(answer.equals(guess)){
-            System.out.println("Correct!");
-            return true;
-        }else {
-            loseGame(guess, answer);
-            return false;
-        }
-
-    }
 
     public static void loseGame(String guess, String answer){
         System.out.println("'" + guess + "' is wrong asnwer ;(. " +

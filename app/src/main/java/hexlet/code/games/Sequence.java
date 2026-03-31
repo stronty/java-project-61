@@ -5,10 +5,8 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Sequence {
-    private static int answer;
-    private static String guess;
 
-    public static void seqGenerate(){
+    public static int seqGenerate(){
         int start = (int)(Math.random() * 25);
         int step = ((int)(Math.random() * 10 + 1));
 
@@ -28,26 +26,28 @@ public class Sequence {
             }
         }
 
-        answer = seq[answerIndex];
-
+        return seq[answerIndex];
 
     }
 
     public static void game(){
         Cli.cli();
-        // Rule for the game
         System.out.println("What number is missing in the progression?\n");
-        //Core mechanic
+
 
 
         Scanner scanner = new Scanner(System.in);
 
         for(var i = 0; i < 3; i++){
             System.out.println("Question: ");
-            seqGenerate();
+            int answer = seqGenerate();
             System.out.print("\nYour answer: ");
-            guess = scanner.nextLine();
-            if (!Engine.keepPlaying(guess, "" + answer)){
+            int guess = scanner.nextInt();
+            scanner.nextLine();
+            if (guess == answer) {
+                System.out.println("Correct!");
+            } else {
+                Engine.loseGame(Integer.toString(guess), Integer.toString(answer));
                 return;
             }
         }
