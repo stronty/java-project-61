@@ -19,3 +19,6 @@
 [![asciicast](https://asciinema.org/a/qepvqK0YnbaMJuK3.svg)](https://asciinema.org/a/qepvqK0YnbaMJuK3)
 ### Find the element of a sequence 
 [![asciicast](https://asciinema.org/a/VkWrM5NBPS8RPJEi.svg)](https://asciinema.org/a/VkWrM5NBPS8RPJEi)
+### Is this number prime or not
+[![asciicast](https://asciinema.org/a/BvchhLAq2oTO7TO9.svg)](https://asciinema.org/a/BvchhLAq2oTO7TO9)
+
