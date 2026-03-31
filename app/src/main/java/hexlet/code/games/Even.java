@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 
 public class Even {
@@ -7,7 +9,7 @@ public class Even {
     private static String answer;
 
 
-    public static void evenGame(){
+    public static void game(){
         Cli.cli();
         // Rule for the game
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
@@ -22,10 +24,10 @@ public class Even {
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
             guess = scanner.nextLine();
-            if (!Game.keepPlaying(guess, answer)){
+            if (!Engine.keepPlaying(guess, answer)){
                 return;
             }
         }
-        Game.winGame();
+        Engine.winGame();
     }
 }

@@ -24,24 +24,45 @@ public class Engine {
                Cli.cli();
                return;
            case 2:
-               Even.evenGame();
+               Even.game();
                break;
            case 3:
-               Calc.calc();
+               Calc.game();
                break;
            case 4:
-               GCD.gcd();
+               GCD.game();
                break;
            case 5:
-               Sequence.seqGame();
+               Sequence.game();
+               break;
            case 6:
                PrimeNumbers.game();
+               break;
            case 0: default:
                break;
        }
 
     }
+    public static boolean keepPlaying(String guess, String answer){
 
+        if(answer.equals(guess)){
+            System.out.println("Correct!");
+            return true;
+        }else {
+            loseGame(guess, answer);
+            return false;
+        }
+
+    }
+
+    public static void loseGame(String guess, String answer){
+        System.out.println("'" + guess + "' is wrong asnwer ;(. " +
+                "Correct answer was '" + answer + "'." );
+    }
+
+    public static void winGame(){
+        System.out.println("\nCongratulations, " + Cli.getUsername() + "!");
+    }
 
 
 

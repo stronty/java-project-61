@@ -1,18 +1,16 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 
 public class Calc {
     private static String guess;
 
 
-    public static void calc(){
+    public static void game(){
         Cli.cli();
-        // Rule for the game
         System.out.println("What is the result of the expression?");
-        //Core mechanic
-
-        // - + *
 
 
         Scanner scanner = new Scanner(System.in);
@@ -39,10 +37,10 @@ public class Calc {
             System.out.println("Question: " + randNum1 + operator + randNum2);
             System.out.print("Your answer: ");
             guess = scanner.nextLine();
-            if (!Game.keepPlaying(guess, Integer.toString(answer))){
+            if (!Engine.keepPlaying(guess, Integer.toString(answer))){
                 return;
             }
         }
-        Game.winGame();
+        Engine.winGame();
     }
 }

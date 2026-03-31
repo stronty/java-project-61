@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 
 public class PrimeNumbers {
@@ -46,10 +48,10 @@ public class PrimeNumbers {
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
             guess = scanner.nextLine();
-            if (!Game.keepPlaying(guess, answer)){
+            if (!Engine.keepPlaying(guess, answer)){
                 return;
             }
         }
-        Game.winGame();
+        Engine.winGame();
     }
 }

@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 
 public class Sequence {
@@ -31,7 +33,7 @@ public class Sequence {
 
     }
 
-    public static void seqGame(){
+    public static void game(){
         Cli.cli();
         // Rule for the game
         System.out.println("What number is missing in the progression?\n");
@@ -45,11 +47,11 @@ public class Sequence {
             seqGenerate();
             System.out.print("\nYour answer: ");
             guess = scanner.nextLine();
-            if (!Game.keepPlaying(guess, "" + answer)){
+            if (!Engine.keepPlaying(guess, "" + answer)){
                 return;
             }
         }
-        Game.winGame();
+        Engine.winGame();
     }
 
 }

@@ -10,9 +10,11 @@ public class App {
         System.out.print("Your choice: ");
 
         Scanner scanner = new Scanner(System.in);
-        int userInput = Integer.parseInt(scanner.nextLine());
+        int userInput = scanner.nextInt();
+        scanner.nextLine();
+
 
         Engine.startGame(userInput);
-
+        scanner.close();
     }
 }
