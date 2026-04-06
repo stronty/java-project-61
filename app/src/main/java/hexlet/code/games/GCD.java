@@ -1,11 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-
-import java.util.Scanner;
-
 import static hexlet.code.games.GameConstants.STANDARD_RANGE;
-import static hexlet.code.games.GameConstants.TOTAL_ROUNDS;
 
 public class GCD {
     public static int[] calculateGCD() {

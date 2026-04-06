@@ -1,13 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-import java.util.Scanner;
 
 import static hexlet.code.games.GameConstants.STANDARD_RANGE;
 import static hexlet.code.games.GameConstants.SEQ_STEP_RANGE;
 import static hexlet.code.games.GameConstants.SEQ_MAX_LENGTH;
 import static hexlet.code.games.GameConstants.SEQ_MIN_LENGTH;
-import static hexlet.code.games.GameConstants.TOTAL_ROUNDS;
 
 
 public class Sequence {
