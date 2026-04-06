@@ -43,19 +43,19 @@ public class Engine {
                     Cli.cli();
                     return;
                 case MENU_EVEN:
-                    i = BuildGame.buildGame(Even.getRule(), Even.game(), i, false);
+                    i = BuildGame.buildGame(Even.getRule(), Even.game(), i);
                     break;
                 case MENU_CALC:
-                    i = BuildGame.buildGame(Calc.getRule(), Calc.game(), i, false);
+                    i = BuildGame.buildGame(Calc.getRule(), Calc.game(), i);
                     break;
                 case MENU_GCD:
-                    i = BuildGame.buildGame(GCD.getRule(), GCD.game(), i, false);
+                    i = BuildGame.buildGame(GCD.getRule(), GCD.game(), i);
                     break;
                 case MENU_SEQUENCE:
-                    i = BuildGame.buildGame(Sequence.getRule(), Sequence.game(), i, false);
+                    i = BuildGame.buildGame(Sequence.getRule(), Sequence.game(), i);
                     break;
                 case MENU_PRIME_NUMBERS:
-                    i = BuildGame.buildGame(PrimeNumbers.getRule(), PrimeNumbers.game(), i, false);
+                    i = BuildGame.buildGame(PrimeNumbers.getRule(), PrimeNumbers.game(), i);
                     break;
                 case EXIT: default:
                     break;

@@ -9,7 +9,7 @@ import static hexlet.code.games.GameConstants.TOTAL_ROUNDS;
 public class BuildGame {
     private static boolean printed = false;
 
-    public static int buildGame(String rule, String[] gameData, int i, boolean continueIfWrong) {
+    public static int buildGame(String rule, String[] gameData, int i) {
         var problem = gameData[0];
         var answer = gameData[1];
         var i1 = i;
@@ -31,12 +31,6 @@ public class BuildGame {
             if (i1 == TOTAL_ROUNDS) {
                 System.out.println("\nCongratulations, " + Cli.getUsername() + "!");
             }
-            return i1;
-        } else if (continueIfWrong) {
-            i1 = 0;
-
-            printLoseGame(guess, answer);
-
             return i1;
         } else {
             i1 = TOTAL_ROUNDS;
