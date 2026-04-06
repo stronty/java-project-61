@@ -26,7 +26,7 @@ public class GCD {
         var problem = mathProblem[0] + " " + mathProblem[1];
         var answer = mathProblem[2];
 
-        return new String[] { problem, Integer.toString(answer) };
+        return new String[] {problem, Integer.toString(answer) };
 
     }
     public static String getRule() {
