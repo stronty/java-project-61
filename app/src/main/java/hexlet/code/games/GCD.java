@@ -24,30 +24,17 @@ public class GCD {
         return new int[]{randNum1, randNum2, a};
     }
 
-    public static void game() {
-        Cli.cli();
-        System.out.println("Find the greatest common divisor of given numbers.");
+    public static String[] game() {
 
-        Scanner scanner = new Scanner(System.in);
 
-        for (var i = 0; i < TOTAL_ROUNDS; i++) {
-            var mathProblem = calculateGCD();
-            var num1 = mathProblem[0];
-            var num2 = mathProblem[1];
-            var answer = mathProblem[2];
+        var mathProblem = calculateGCD();
+        var problem = mathProblem[0] + " " + mathProblem[1];
+        var answer = mathProblem[2];
 
-            System.out.println("Question: " + num1 + " " + num2);
-            System.out.print("Your answer: ");
-            int guess = scanner.nextInt();
-            scanner.nextLine();
+        return new String[]{ problem, Integer.toString(answer) };
 
-            if (guess == answer) {
-                System.out.println("Correct!");
-            } else {
-                Engine.loseGame(Integer.toString(guess), Integer.toString(answer));
-                return;
-            }
-        }
-        Engine.winGame();
+    }
+    public static String getRule(){
+        return "Find the greatest common divisor of given numbers.";
     }
 }

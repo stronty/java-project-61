@@ -1,5 +1,4 @@
 plugins {
-    id 'java'
     id 'application'
     id "com.github.ben-manes.versions" version "0.53.0"  // Add version plugin here instead of buildscript
     id ("org.sonarqube") version "7.2.3.7755"

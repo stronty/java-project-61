@@ -1,11 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-
-import java.util.Scanner;
-
 import static hexlet.code.games.GameConstants.PRIME_NUMBERS_START;
-import static hexlet.code.games.GameConstants.TOTAL_ROUNDS;
 import static hexlet.code.games.GameConstants.PRIME_RANGE;
 
 public class PrimeNumbers {
@@ -35,28 +30,15 @@ public class PrimeNumbers {
 
         return true;
     }
-    public static void game() {
-        Cli.cli();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+    public static String[] game() {
 
+        int randomNum = (int) (Math.random() * PRIME_RANGE);
+        String answer = isPrime(randomNum) ? "yes" : "no";
 
+        return new String[]{Integer.toString(randomNum), answer};
 
-        Scanner scanner = new Scanner(System.in);
-
-        for (var i = 0; i < TOTAL_ROUNDS; i++) {
-            int randomNum = (int) (Math.random() * PRIME_RANGE);
-            String answer = isPrime(randomNum) ? "yes" : "no";
-            System.out.println("Question: " + randomNum);
-            System.out.print("Your answer: ");
-            String guess = scanner.nextLine();
-
-            if (guess.equals(answer)) {
-                System.out.println("Correct!");
-            } else {
-                Engine.loseGame(guess, answer);
-                return;
-            }
-        }
-        Engine.winGame();
+    }
+    public static String getRule() {
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 }

@@ -7,6 +7,8 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.PrimeNumbers;
 import hexlet.code.games.Sequence;
 
+import static hexlet.code.games.GameConstants.TOTAL_ROUNDS;
+
 public class Engine {
     private static final int MENU_GREET = 1;
     private static final int MENU_EVEN = 2;
@@ -34,27 +36,30 @@ public class Engine {
     }
 
     public static void startGame(int gameNum) {
-        switch (gameNum) {
-            case MENU_GREET:
-                Cli.cli();
-                return;
-            case MENU_EVEN:
-                Even.game();
-                break;
-            case MENU_CALC:
-                Calc.game();
-                break;
-            case MENU_GCD:
-                GCD.game();
-                break;
-            case MENU_SEQUENCE:
-                Sequence.game();
-                break;
-            case MENU_PRIME_NUMBERS:
-                PrimeNumbers.game();
-                break;
-            case EXIT: default:
-                break;
+        var i = 0;
+        while(i < TOTAL_ROUNDS){
+            switch (gameNum) {
+                case MENU_GREET:
+                    Cli.cli();
+                    return;
+                case MENU_EVEN:
+                    i = BuildGame.buildGame(Even.getRule(), Even.game(), i, true);
+                    break;
+                case MENU_CALC:
+                    i = BuildGame.buildGame(Calc.getRule(), Calc.game(), i, false);
+                    break;
+                case MENU_GCD:
+                    i = BuildGame.buildGame(GCD.getRule(), GCD.game(), i, false);
+                    break;
+                case MENU_SEQUENCE:
+                    i = BuildGame.buildGame(Sequence.getRule(), Sequence.game(), i, false);
+                    break;
+                case MENU_PRIME_NUMBERS:
+                    i = BuildGame.buildGame(PrimeNumbers.getRule(), PrimeNumbers.game(), i, false);
+                    break;
+                case EXIT: default:
+                    break;
+            }
         }
 
     }
