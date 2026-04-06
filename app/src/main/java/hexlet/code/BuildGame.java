@@ -28,11 +28,11 @@ public class BuildGame {
         if (guess.equals(answer)) {
             System.out.println("Correct!");
             i1++;
-            if (i1 == 3) {
+            if (i1 == TOTAL_ROUNDS) {
                 System.out.println("\nCongratulations, " + Cli.getUsername() + "!");
             }
             return i1;
-        } else if (continueIfWrong){
+        } else if (continueIfWrong) {
             i1 = 0;
 
             printLoseGame(guess, answer);
@@ -47,7 +47,7 @@ public class BuildGame {
         }
     }
 
-    public static void printLoseGame(String guess, String answer){
+    public static void printLoseGame(String guess, String answer) {
         System.out.println("'" + guess + "' is wrong answer ;(. "
                 + "Correct answer was '" + answer + "'.");
 

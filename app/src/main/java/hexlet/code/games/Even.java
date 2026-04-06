@@ -14,7 +14,7 @@ public class Even {
         return new String[]{Integer.toString(randomNum), answer};
     }
 
-    public static String getRule(){
+    public static String getRule() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 }

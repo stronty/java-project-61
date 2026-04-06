@@ -37,7 +37,7 @@ public class Engine {
 
     public static void startGame(int gameNum) {
         var i = 0;
-        while(i < TOTAL_ROUNDS){
+        while (i < TOTAL_ROUNDS) {
             switch (gameNum) {
                 case MENU_GREET:
                     Cli.cli();
