@@ -43,7 +43,7 @@ public class Engine {
                     Cli.cli();
                     return;
                 case MENU_EVEN:
-                    i = BuildGame.buildGame(Even.getRule(), Even.game(), i, true);
+                    i = BuildGame.buildGame(Even.getRule(), Even.game(), i, false);
                     break;
                 case MENU_CALC:
                     i = BuildGame.buildGame(Calc.getRule(), Calc.game(), i, false);
