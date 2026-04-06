@@ -31,14 +31,13 @@ public class BuildGame {
             if (i1 == TOTAL_ROUNDS) {
                 System.out.println("\nCongratulations, " + Cli.getUsername() + "!");
             }
-            return i1;
         } else {
             i1 = TOTAL_ROUNDS;
 
             printLoseGame(guess, answer);
 
-            return i1;
         }
+        return i1;
     }
 
     public static void printLoseGame(String guess, String answer) {

@@ -64,17 +64,4 @@ public class Engine {
 
     }
 
-    public static void loseGame(String guess, String answer) {
-        System.out.println("'" + guess + "' is wrong answer ;(. "
-                + "Correct answer was '" + answer + "'.");
-
-        System.out.println("Let's try again, " + Cli.getUsername() + "!");
-    }
-
-    public static void winGame() {
-        System.out.println("\nCongratulations, " + Cli.getUsername() + "!");
-    }
-
-
-
 }
