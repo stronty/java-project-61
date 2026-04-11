@@ -36,29 +36,44 @@ public class Engine {
     }
 
     public static void startGame(int gameNum) {
-        var i = 0;
-        while (i < TOTAL_ROUNDS) {
+        var round = 0;
+        boolean isCorrect;
+
+        while (round < TOTAL_ROUNDS) {
             switch (gameNum) {
                 case MENU_GREET:
                     Cli.cli();
                     return;
                 case MENU_EVEN:
-                    i = BuildGame.buildGame(Even.getRule(), Even.game(), i);
+                    isCorrect = runGame.playRound(Even.getRule(), Even.game());
                     break;
                 case MENU_CALC:
-                    i = BuildGame.buildGame(Calc.getRule(), Calc.game(), i);
+                    isCorrect = runGame.playRound(Calc.getRule(), Calc.game());
                     break;
                 case MENU_GCD:
-                    i = BuildGame.buildGame(GCD.getRule(), GCD.game(), i);
+                    isCorrect = runGame.playRound(GCD.getRule(), GCD.game());
                     break;
                 case MENU_SEQUENCE:
-                    i = BuildGame.buildGame(Sequence.getRule(), Sequence.game(), i);
+                    isCorrect = runGame.playRound(Sequence.getRule(), Sequence.game());
                     break;
                 case MENU_PRIME_NUMBERS:
-                    i = BuildGame.buildGame(PrimeNumbers.getRule(), PrimeNumbers.game(), i);
+                    isCorrect = runGame.playRound(PrimeNumbers.getRule(), PrimeNumbers.game());
                     break;
                 case EXIT: default:
-                    break;
+                    return;
+            }
+
+            if (isCorrect) {
+                round++;
+                System.out.println("Correct!");
+                if (round == TOTAL_ROUNDS) {
+                    System.out.println("\nCongratulations, " + runGame.getUsername() + "!");
+                }
+            } else {
+                System.out.println("'" + runGame.getGuess() + "' is wrong answer ;(. "
+                        + "Correct answer was '" + runGame.getAnswer() + "'.");
+                System.out.println("Let's try again, " + runGame.getUsername() + "!");
+                return;
             }
         }
 
