@@ -45,19 +45,19 @@ public class Engine {
                     Cli.cli();
                     return;
                 case MENU_EVEN:
-                    isCorrect = runGame.playRound(Even.getRule(), Even.game());
+                    isCorrect = RunGame.playRound(Even.getRule(), Even.game());
                     break;
                 case MENU_CALC:
-                    isCorrect = runGame.playRound(Calc.getRule(), Calc.game());
+                    isCorrect = RunGame.playRound(Calc.getRule(), Calc.game());
                     break;
                 case MENU_GCD:
-                    isCorrect = runGame.playRound(GCD.getRule(), GCD.game());
+                    isCorrect = RunGame.playRound(GCD.getRule(), GCD.game());
                     break;
                 case MENU_SEQUENCE:
-                    isCorrect = runGame.playRound(Sequence.getRule(), Sequence.game());
+                    isCorrect = RunGame.playRound(Sequence.getRule(), Sequence.game());
                     break;
                 case MENU_PRIME_NUMBERS:
-                    isCorrect = runGame.playRound(PrimeNumbers.getRule(), PrimeNumbers.game());
+                    isCorrect = RunGame.playRound(PrimeNumbers.getRule(), PrimeNumbers.game());
                     break;
                 case EXIT: default:
                     return;
@@ -67,12 +67,12 @@ public class Engine {
                 round++;
                 System.out.println("Correct!");
                 if (round == TOTAL_ROUNDS) {
-                    System.out.println("\nCongratulations, " + runGame.getUsername() + "!");
+                    System.out.println("\nCongratulations, " + RunGame.getUsername() + "!");
                 }
             } else {
-                System.out.println("'" + runGame.getGuess() + "' is wrong answer ;(. "
-                        + "Correct answer was '" + runGame.getAnswer() + "'.");
-                System.out.println("Let's try again, " + runGame.getUsername() + "!");
+                System.out.println("'" + RunGame.getGuess() + "' is wrong answer ;(. "
+                        + "Correct answer was '" + RunGame.getAnswer() + "'.");
+                System.out.println("Let's try again, " + RunGame.getUsername() + "!");
                 return;
             }
         }
