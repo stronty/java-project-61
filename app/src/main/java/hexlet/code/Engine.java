@@ -46,9 +46,12 @@ public class Engine {
         username = scanner.nextLine();
         System.out.println("Hello, " + username + "!\n");
 
-        for (var round: gameData) {
-            var question = round[0];
-            var answer = round[1];
+        System.out.println(gameData[gameData.length - 1][0]);
+
+        for (var i = 0; i < TOTAL_ROUNDS; i++) {
+            var question = gameData[i][0];
+            var answer = gameData[i][1];
+
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             String guess = scanner.nextLine();
