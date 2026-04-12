@@ -5,7 +5,9 @@ import hexlet.code.games.Cli;
 
 import java.util.Scanner;
 
-import static hexlet.code.games.GameConstants.*;
+import static hexlet.code.games.GameConstants.EXIT;
+import static hexlet.code.games.GameConstants.MENU_GREET;
+import static hexlet.code.games.GameConstants.TOTAL_ROUNDS;
 
 public class Engine {
 
@@ -36,8 +38,7 @@ public class Engine {
             return;
         } else if (gameNum == EXIT) {
             return;
-        }
-        else {
+        } else {
             gameData = GenGame.genRounds(gameNum, TOTAL_ROUNDS);
         }
 

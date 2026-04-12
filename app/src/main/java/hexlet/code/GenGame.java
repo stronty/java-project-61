@@ -17,6 +17,7 @@ public class GenGame {
     public static String[][] genRounds(int gameNum, int totalRounds) {
         String[][] rounds = new String[totalRounds + 1][];
         rounds[totalRounds] = new String[1];
+
         for (var i = 0; i < totalRounds; i++) {
             switch (gameNum) {
                 case MENU_EVEN:
@@ -38,6 +39,8 @@ public class GenGame {
                 case MENU_PRIME_NUMBERS:
                     rounds[i] = PrimeNumbers.game();
                     rounds[totalRounds][0] = PrimeNumbers.getRule();
+                    break;
+                default:
                     break;
             }
         }
