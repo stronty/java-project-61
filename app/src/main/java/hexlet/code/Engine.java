@@ -1,22 +1,13 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Cli;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.PrimeNumbers;
-import hexlet.code.games.Sequence;
 
-import static hexlet.code.games.GameConstants.TOTAL_ROUNDS;
+import hexlet.code.games.Cli;
+
+import java.util.Scanner;
+
+import static hexlet.code.games.GameConstants.*;
 
 public class Engine {
-    private static final int MENU_GREET = 1;
-    private static final int MENU_EVEN = 2;
-    private static final int MENU_CALC = 3;
-    private static final int MENU_GCD = 4;
-    private static final int MENU_SEQUENCE = 5;
-    private static final int MENU_PRIME_NUMBERS = 6;
-    private static final int EXIT = 0;
 
     public static void gamesList() {
         System.out.println("Please enter the game number and press Enter");
@@ -36,46 +27,42 @@ public class Engine {
     }
 
     public static void startGame(int gameNum) {
-        var round = 0;
-        boolean isCorrect;
+        String[][] gameData;
+        Scanner scanner = new Scanner(System.in);
+        String username;
 
-        while (round < TOTAL_ROUNDS) {
-            switch (gameNum) {
-                case MENU_GREET:
-                    Cli.cli();
-                    return;
-                case MENU_EVEN:
-                    isCorrect = RunGame.playRound(Even.getRule(), Even.game());
-                    break;
-                case MENU_CALC:
-                    isCorrect = RunGame.playRound(Calc.getRule(), Calc.game());
-                    break;
-                case MENU_GCD:
-                    isCorrect = RunGame.playRound(GCD.getRule(), GCD.game());
-                    break;
-                case MENU_SEQUENCE:
-                    isCorrect = RunGame.playRound(Sequence.getRule(), Sequence.game());
-                    break;
-                case MENU_PRIME_NUMBERS:
-                    isCorrect = RunGame.playRound(PrimeNumbers.getRule(), PrimeNumbers.game());
-                    break;
-                case EXIT: default:
-                    return;
-            }
+        if (gameNum == MENU_GREET) {
+            Cli.cli();
+            return;
+        } else if (gameNum == EXIT) {
+            return;
+        }
+        else {
+            gameData = GenGame.genRounds(gameNum, TOTAL_ROUNDS);
+        }
 
-            if (isCorrect) {
-                round++;
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        username = scanner.nextLine();
+        System.out.println("Hello, " + username + "!\n");
+
+        for (var round: gameData) {
+            var question = round[0];
+            var answer = round[1];
+            System.out.println("Question: " + question);
+            System.out.print("Your answer: ");
+            String guess = scanner.nextLine();
+
+            if (answer.equals(guess)) {
                 System.out.println("Correct!");
-                if (round == TOTAL_ROUNDS) {
-                    System.out.println("\nCongratulations, " + RunGame.getUsername() + "!");
-                }
             } else {
-                System.out.println("'" + RunGame.getGuess() + "' is wrong answer ;(. "
-                        + "Correct answer was '" + RunGame.getAnswer() + "'.");
-                System.out.println("Let's try again, " + RunGame.getUsername() + "!");
+                System.out.println("'" + guess + "' is wrong answer ;(. "
+                        + "Correct answer was '" + answer + "'.");
+                System.out.println("Let's try again, " + username + "!");
                 return;
             }
         }
+        System.out.println("\nCongratulations, " + username + "!");
 
     }
 

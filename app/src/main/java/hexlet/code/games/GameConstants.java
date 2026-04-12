@@ -13,4 +13,12 @@ public class GameConstants {
     public static final int PRIME_NUMBERS_START = 3;
 
     public static final int TOTAL_OPERATORS = 3;
+
+    public static final int MENU_GREET = 1;
+    public static final int EXIT = 0;
+    public static final int MENU_EVEN = 2;
+    public static final int MENU_CALC = 3;
+    public static final int MENU_GCD = 4;
+    public static final int MENU_SEQUENCE = 5;
+    public static final int MENU_PRIME_NUMBERS = 6;
 }
